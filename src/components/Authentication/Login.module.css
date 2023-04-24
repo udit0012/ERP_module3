@@ -74,7 +74,6 @@ img {
   justify-content: center;
   align-items: center;
   max-width: 80rem;
-  height: 90vh;
   width: 100%;
   padding: 0 2rem;
   margin: 0 auto;
@@ -117,7 +116,7 @@ img {
   max-width: 28rem;
   width: 100%;
   margin: 2rem auto;
-  /* margin-top: 12rem; */
+  margin-top: 12rem;
   padding: 2rem 2.5rem;
   border: none;
   outline: none;
@@ -158,9 +157,6 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-.inputPara{
-  margin: 0;
 }
 .inputField img{
   height: 20px;
@@ -206,7 +202,7 @@ img {
   cursor: pointer;
 }
 .options{
-  /* overflow: hidden; */
+  overflow: hidden;
   width: 100%;
   margin: 10px 0;
   border-radius: 10px;

@@ -1,13 +1,23 @@
 import React, { useState } from "react";
 import NoteContext from "./Notecontext";
+import { useReducer } from "react";
+import {Reducer} from "./Reducer";
+import {useContext} from"react"
 import { useNavigate } from "react-router-dom";
 
 const Notestate = ({ children }) => {
+  const intialstate={
+    branch:[],
+    Designation:[]
+  }
+ 
   const [loggedUser, setLoggedUser] = useState({id:null, email:"",username:"", faculty: {} });
   const link = "http://localhost:8080";
   const [loading, setLoading] = React.useState(false);
 
   const fetchuserdata = async () => {
+
+
     // setLoading(true)
     try {
       const requestHeaders = {
@@ -66,7 +76,8 @@ const Notestate = ({ children }) => {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
   };
-
+  const [state,dispatch]=useReducer(Reducer,intialstate)
+   
   return (
     <NoteContext.Provider
       value={{
@@ -75,6 +86,8 @@ const Notestate = ({ children }) => {
         fetchFacultyData,
         logout,
         loggedUser,
+        state,
+        dispatch,
         setLoggedUser,
       }}
     >
@@ -82,5 +95,6 @@ const Notestate = ({ children }) => {
     </NoteContext.Provider>
   );
 };
-
+const Usefilter=()=>useContext(NoteContext);
+export {Usefilter}
 export default Notestate;

@@ -3,14 +3,14 @@ import { Link } from "react-router-dom";
 import CardProfile from "./CardProfile";
 
 const HeaderDash = () => {
-  const [inputDisabled,setInputDisabled] = React.useState(true);
+  const [inputDisabled, setInputDisabled] = React.useState(true);
   const handleChange = () => {
     console.log("hi");
   };
-  const handleInputDisabled = (edit)=>{
-    if(edit){
+  const handleInputDisabled = (edit) => {
+    if (edit) {
       setInputDisabled(false);
-    }else{
+    } else {
       setInputDisabled(true);
     }
   }
@@ -28,9 +28,10 @@ const HeaderDash = () => {
                 This is your profile page. You can see the progress you've made
                 with your work and manage your projects or assigned tasks
               </p>
-              <a href="#!" className="btn btn-info">
-                Edit profile
-              </a>
+              {inputDisabled ? <Link onClick={() => handleInputDisabled(true)} className="btn btn-info ">
+                      Edit Profile
+                    </Link> :
+                      <div></div>}
             </div>
           </div>
         </div>
@@ -48,12 +49,12 @@ const HeaderDash = () => {
                     <h3 className="mb-0 text-oliveGreen">My account</h3>
                   </div>
                   <div className="col-4 text-right">
-                    {inputDisabled ? <Link onClick={()=>handleInputDisabled(true)} className="btn btn-sm btn-primary">
+                    {inputDisabled ? <Link onClick={() => handleInputDisabled(true)} className="btn btn-sm btn-primary">
                       Edit Profile
-                    </Link>:
-                    <Link onClick={()=>handleInputDisabled(false)} className="btn btn-sm btn-primary">
-                      Update
-                    </Link>}
+                    </Link> :
+                      <Link onClick={() => handleInputDisabled(false)} className="btn btn-sm btn-primary">
+                        Update
+                      </Link>}
                   </div>
                 </div>
               </div>

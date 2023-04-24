@@ -1,9 +1,12 @@
 import React from "react";
 import "./DashboardComponents/FacultyProfile.css";
 import HeaderDash from "./DashboardComponents/HeaderDash";
+import { useParams } from "react-router-dom";
 import NavbarDash from "./DashboardComponents/NavbarDash";
 
-const FacultyProfile = () => {
+const FacultyProfile = ({isResearch}) => {
+  const {id}=useParams()
+  console.log(id);
   const handleChange = (e) => {
     console.log("input");
   };
@@ -118,6 +121,10 @@ const FacultyProfile = () => {
     //     </div>
     //   </footer>
     //   </>
+
+
+
+    
   );
 };
 

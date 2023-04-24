@@ -3,6 +3,7 @@
     --shadowColor:rgb(180, 180, 180);
     --color:#127d82;
 }
+
 .homepage{
     width: 100%;
     margin: 40px 0px;
@@ -72,7 +73,7 @@
 }
 .tableBox{
     margin: 0 20px;
-    width: 100%;
+    width:100%;
 }
 .table{
     border-collapse: collapse;
@@ -84,6 +85,9 @@
 th{
     text-align: left;
     background-color: #139ca3;
+}
+tr{
+    width: 45px;
 }
 th,td{
     color: white;
@@ -104,8 +108,7 @@ tr:hover{
     background-color: var(--color);
     color: white;
 }
-.filterData{
-}
+
 .filterHead{
     display: flex;
     align-items: center;
@@ -123,4 +126,7 @@ tr:hover{
     padding: 5px 0;
     font-size: 17px;
     font-weight: 700;
+}
+th{
+    width: 12px;
 }

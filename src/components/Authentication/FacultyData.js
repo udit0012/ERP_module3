@@ -109,14 +109,14 @@ const FacultyData = () => {
             </div>
             <div className={styles.selectBox}>
               <div onClick={()=>{setActiveDep(!activeDep)}} className={styles.inputField}>
-                <p className={styles.inputPara}>{credentials.department?credentials.department:"Select Department"}</p>
+                <p>{credentials.department?credentials.department:"Select Department"}</p>
                 <img src={arrowDown} alt="" />
               </div>
               <ul className={`${styles.options} ${activeDep?styles.active:""}`}>
                 {department.map((op) => {
                   return (
                     <li value={op.title} onClick={()=>selectHandleDep(op.title)} className={`${styles.option} ${credentials.department===op.title?styles.active:""}`}>
-                      <p className={styles.inputPara}>{op.title}</p>
+                      <p>{op.title}</p>
                     </li>
                   );
                 })}
@@ -124,14 +124,14 @@ const FacultyData = () => {
             </div>
             <div className={styles.selectBox}>
               <div onClick={()=>{setActiveDes(!activeDes)}} className={styles.inputField}>
-                <p className={styles.inputPara}>{credentials.designation?credentials.designation:"Select Department"}</p>
+                <p>{credentials.designation?credentials.designation:"Select Department"}</p>
                 <img src={arrowDown} alt="" />
               </div>
               <ul className={`${styles.options} ${activeDes?styles.active:""}`}>
                 {designation.map((op) => {
                   return (
                     <li value={op.title} onClick={()=>selectHandleDes(op.title)} className={`${styles.option} ${credentials.designation===op.title?styles.active:""}`}>
-                      <p className={styles.inputPara}>{op.title}</p>
+                      <p>{op.title}</p>
                     </li>
                   );
                 })}
