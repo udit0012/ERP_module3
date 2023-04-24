@@ -4,6 +4,7 @@ import searchIcon from "../../Images/icons8-search-50.png";
 import SortIcon from "../../Images/icons8-funnel-50.png";
 import { faculties } from "./jsonData";
 import Pagination from "./components/Pagination";
+import { Link } from "react-router-dom";
 
 const HomePage = () => {
   const [data, setData] = React.useState(faculties);
@@ -118,7 +119,8 @@ const HomePage = () => {
             </tr>
             {currentTable?.map((row) => {
               return (
-                <tr key={row._id}>
+                <Link to={"/"}>
+                  <tr key={row._id}>
                   <td>{row.username}</td>
                   <td>{row.designation}</td>
                   <td>{row.department}</td>
@@ -126,6 +128,7 @@ const HomePage = () => {
                   <td>{row.researchTitle}</td>
                   <td>{row.year}</td>
                 </tr>
+                  </Link>
               );
             })}
           </table>:"Loading"}
